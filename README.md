@@ -14,9 +14,9 @@ If you find this repository helpful, please cite:
     }
 
 
-### Train and Preprocess CLWE
+### Pre-Train and Preprocess
 
-The first step is to train CLWE using a projection-based method.
+The first step is to train cross-lingual word embeddings (CLWE) using a projection-based method.
 In the paper, we start with monolingual [Wikipedia FastText embeddings](https://fasttext.cc/docs/en/pretrained-vectors.html).
 We normalize the monolingual embeddings with [Iterative Normalization](https://github.com/zhangmozhi/iternorm) and align them with [CCA](https://github.com/mfaruqui/crosslingual-cca), [MUSE](https://github.com/facebookresearch/MUSE), or [RCSLS](https://github.com/facebookresearch/fastText/tree/master/alignment).
 We preprocess them to lowercase all words and keep only the top 200K words:
