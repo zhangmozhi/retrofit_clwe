@@ -1,4 +1,4 @@
-# Retrofitting Cross-Lingual Word Embeddings (CLWE) to Dictionaries
+# Retrofitting Cross-Lingual Word Embeddings to Dictionaries
 
 This repository contains code to reproduce results from our ACL 2020 paper:
 
