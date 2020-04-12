@@ -21,7 +21,7 @@ In the paper, we start with monolingual [Wikipedia FastText embeddings](https://
 We normalize the monolingual embeddings with [Iterative Normalization](https://github.com/zhangmozhi/iternorm) and align them with [CCA](https://github.com/mfaruqui/crosslingual-cca), [MUSE](https://github.com/facebookresearch/MUSE), or [RCSLS](https://github.com/facebookresearch/fastText/tree/master/alignment).
 We preprocess them to lowercase all words and keep only the top 200K words:
 
-    python preprocess_embeds [INPUT_EMBEDDING_FILE] [OUTPUT_EMBEDDING_FILE]
+    python preprocess_embeds.py [INPUT_EMBEDDING_FILE] [OUTPUT_EMBEDDING_FILE]
     
 ### Retrofit CLWE to a Dictionary
 
@@ -87,5 +87,22 @@ For example, we can run a English-Chinese experiment:
         --test mldoc/chinese.test
 
 ### Evaluate on Dependency Parsing
+If AllenNLP is not installed, install it e.g., `pip3 install -r requirements.txt`.
 
-Coming soon.
+Download [Universal Dependencies (UD) v2.4](http://hdl.handle.net/11234/1-2988) and do the following steps to preprocess the UD data and run it using AllenNLP.
+
+1. Add a prefix (e.g., "en") to all tokens in UD .conllu files by running `add_prefix.py`, for example
+
+    python dependency_parse/scripts/add_prefix.py \
+        --lang en \
+        --f_in PATH_TO_UD/en_ewt-ud-train.conllu
+
+2. Create `vocab.txt` (and `non_padded_namespaces.txt`) by running `extract_allen_vocabs.py` with the pre-trained cross-lingual word embeddings as an input. Note that the script assumes that vocabularies from different languages are concatenated to one embedding using the same prefix used in `add_prefix.py`.
+
+    python dependency_parse/scripts/extract_allen_vocabs.py \
+        --emb PATH_TO_EMBEDDING \
+        --vocab_path OUTPUT_PATH_OF_VOCAB
+
+3. Edit the path to `vocab.txt` file, the path to the pre-trained word vector, and UD training/dev/test path in `dependency_parse/allen_configs/parse.jsonnet`.
+
+4. Run `sh dependency_parse/scripts/run_allennlp.sh`.
