@@ -87,21 +87,22 @@ For example, we can run a English-Chinese experiment:
         --test mldoc/chinese.test
 
 ### Evaluate on Dependency Parsing
-If AllenNLP is not installed, install it e.g., `pip3 install -r requirements.txt`.
 
-Download [Universal Dependencies (UD) v2.4](http://hdl.handle.net/11234/1-2988) and do the following steps to preprocess the UD data and run it using AllenNLP.
+1. Install [AllenNLP](https://github.com/allenai/allennlp) with `pip install -r requirements.txt`.
 
-1. Add a prefix (e.g., "en") to all tokens in UD .conllu files by running `add_prefix.py`, for example
+2. Download [Universal Dependencies (UD) v2.4](http://hdl.handle.net/11234/1-2988).
 
-    python dependency_parse/scripts/add_prefix.py \
-        --lang en \
-        --f_in PATH_TO_UD/en_ewt-ud-train.conllu
+3. Add a language prefix to all tokens in UD .conllu files with `dependency_parse.scripts/add_prefix.py`. For example, we can add 'en' to all words with the following:
 
-2. Create `vocab.txt` (and `non_padded_namespaces.txt`) by running `extract_allen_vocabs.py` with the pre-trained cross-lingual word embeddings as an input. Note that the script assumes that vocabularies from different languages are concatenated to one embedding using the same prefix used in `add_prefix.py`.
+         python dependency_parse/scripts/add_prefix.py \
+            --lang en \
+            --f_in PATH_TO_UD/en_ewt-ud-train.conllu
 
-    python dependency_parse/scripts/extract_allen_vocabs.py \
-        --emb PATH_TO_EMBEDDING \
-        --vocab_path OUTPUT_PATH_OF_VOCAB
+2. Create `vocab.txt` (and `non_padded_namespaces.txt`) by running `dependency_parse/scripts/extract_allen_vocabs.py`. The --emb is a merged embedding file from `merge_clwe.py`.
+
+        python dependency_parse/scripts/extract_allen_vocabs.py \
+            --emb PATH_TO_EMBEDDING \
+            --vocab_path OUTPUT_PATH_OF_VOCAB
 
 3. Edit the path to `vocab.txt` file, the path to the pre-trained word vector, and UD training/dev/test path in `dependency_parse/allen_configs/parse.jsonnet`.
 
