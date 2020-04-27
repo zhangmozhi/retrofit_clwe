@@ -1,5 +1,7 @@
 # Retrofitting Cross-Lingual Word Embeddings to Dictionaries
 
+![](overview.png)
+
 This repository contains code to reproduce results from our ACL 2020 paper:
 
 Mozhi Zhang\*, Yoshinari Fujinuma\*, Michael J. Paul, Jordan Boyd-Graber. *Why Overfitting Isn't Always Bad: Retrofitting Cross-Lingual Word Embeddings to Dictionaries*.
@@ -12,7 +14,6 @@ If you find this repository helpful, please cite:
     	Booktitle = {Proceedings of the Association for Computational Linguistics},
     	Year = {2020}
     }
-
 
 ### Pre-Train and Preprocess
 
