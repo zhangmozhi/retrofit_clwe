@@ -1,6 +1,6 @@
 # Retrofitting Cross-Lingual Word Embeddings to Dictionaries
 
-![](overview.png)
+<img src="overview.png" width="60%">
 
 This repository contains code to reproduce results from our ACL 2020 paper:
 
