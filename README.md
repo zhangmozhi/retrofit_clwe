@@ -2,9 +2,9 @@
 
 <img src="overview.png" width="60%">
 
-This repository contains code to reproduce results from our ACL 2020 paper:
+This repository reproduces results from our ACL 2020 paper:
 
-Mozhi Zhang\*, Yoshinari Fujinuma\*, Michael J. Paul, Jordan Boyd-Graber. *Why Overfitting Isn't Always Bad: Retrofitting Cross-Lingual Word Embeddings to Dictionaries*.
+Mozhi Zhang\*, Yoshinari Fujinuma\*, Michael J. Paul, Jordan Boyd-Graber. [_Why Overfitting Isn't Always Bad: Retrofitting Cross-Lingual Word Embeddings to Dictionaries_](https://www.aclweb.org/anthology/2020.acl-main.201.pdf).
 
 If you find this repository helpful, please cite:
 
