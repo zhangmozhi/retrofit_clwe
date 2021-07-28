@@ -12,6 +12,7 @@ If you find this repository helpful, please cite:
     	Title = {Why Overfitting Isn't Always Bad: Retrofitting Cross-Lingual Word Embeddings to Dictionaries},
     	Author = {Zhang, Mozhi and Fujinuma, Yoshinari and Paul, Michael J. and  Boyd-Graber, Jordan},
     	Booktitle = {Proceedings of the Association for Computational Linguistics},
+        doi = "10.18653/v1/2020.acl-main.201",
     	Year = {2020}
     }
 
