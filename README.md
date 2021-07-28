@@ -9,11 +9,11 @@ Mozhi Zhang\*, Yoshinari Fujinuma\*, Michael J. Paul, Jordan Boyd-Graber. [_Why 
 If you find this repository helpful, please cite:
 
     @inproceedings{zhang-2020-overfit,
-    	Title = {Why Overfitting Isn't Always Bad: Retrofitting Cross-Lingual Word Embeddings to Dictionaries},
-    	Author = {Zhang, Mozhi and Fujinuma, Yoshinari and Paul, Michael J. and  Boyd-Graber, Jordan},
-    	Booktitle = {Proceedings of the Association for Computational Linguistics},
+        title = {Why Overfitting Isn't Always Bad: Retrofitting Cross-Lingual Word Embeddings to Dictionaries},
+        author = {Zhang, Mozhi and Fujinuma, Yoshinari and Paul, Michael J. and  Boyd-Graber, Jordan},
+        booktitle = {Proceedings of the Association for Computational Linguistics},
         doi = "10.18653/v1/2020.acl-main.201",
-    	Year = {2020}
+        year = {2020}
     }
 
 ### Pre-Train and Preprocess
